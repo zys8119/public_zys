@@ -1,0 +1,31 @@
+//
+   Created by 张云山 on 2017/2/15.
+//顶部导航
+mixin navs_top(a)
+    -a.left = a.content || "";
+    -a.right = a.content || "";
+    -a.content = a.content || "";
+    -a.rightBool = (a.rightBool === true)? true : false;
+    -a.leftBool = (a.leftBool === false)? false : true;
+    -a.leftUrl = a.leftUrl || "../img/icon4.png";
+    -a.rightUrl = a.rightUrl || "请设置URL";
+    -a.Class = a.Class || "";
+    -a.leftClass = a.leftClass || "";
+    -a.rightClass = a.rightClass || "";
+    ul.col-xs-12.navs_top(class="#{a.Class}")
+        if a.leftBool
+            li.col-xs-2.left(class="#{a.leftClass}" style="background-image:url('#{a.leftUrl}')") &nbsp;
+            li.col-xs-8.content #{a.content}
+        else
+            li.col-xs-8.col-xs-offset-2.content #{a.content}
+        if a.rightBool
+                li.col-xs-2.right(class="#{a.rightClass}" style="background-image:url('#{a.rightUrl}')") &nbsp;
+//底部导航
+mixin navs_buttom(a)
+    -a = a || {}
+    -a.list= a.list || [];
+    ul.col-xs-12.navs_buttom
+        each v,k in a.list
+            li.col-xs-12(style="width:#{100/a.list.length}%;")
+                i.col-xs-12(style="background-image:url('../img/icon5-#{k+1}-#{v.icon}.png')") &nbsp;
+                span.col-xs-12 #{v.name}

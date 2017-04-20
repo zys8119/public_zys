@@ -1,0 +1,36 @@
+//依赖s
+@import "CssFunction";
+//依赖e
+
+
+//@font-face {
+//  font-family: '字体名称';
+//  src: url('字体地址路径.eot'); /* IE9*/
+//  src: url('字体地址路径.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//  url('字体地址路径.woff') format('woff'), /* chrome、firefox */
+//  url('字体地址路径.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+//  url('字体地址路径.svg#iconfont') format('svg'); /* iOS 4.1- */
+//}
+//.字体名称{font-family: '字体名称' !important;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;};
+//==================================s
+//字体引入======================s
+.fontCss(@fontName,@fontUrl){
+  @font-face {
+    font-family: '@{fontName}';
+    src: url('@{fontUrl}.eot'); /* IE9*/
+    src: url('@{fontUrl}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('@{fontUrl}.woff') format('woff'), /* chrome、firefox */
+    url('@{fontUrl}.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('@{fontUrl}}.svg#iconfont') format('svg'); /* iOS 4.1- */
+  }
+  .@{fontName}{//字体图标样式类
+    font-family: '@{fontName}' !important;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale;
+  };
+}
+.AlibabaFont(@v:"请设置阿里图标字体版本号",@fontName:iconfont){//阿里巴巴字体图标
+    .fontCss(@fontName,'//at.alicdn.com/t/@{v}');
+}
+//字体引入======================e
+//===============以上可忽略===================e
+
+.AlibabaFont("font_58o9b4josguy2e29");//请设置阿里图标字体版本号

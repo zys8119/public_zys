@@ -1,0 +1,8 @@
+//
+   Created by 张云山 on 2017/2/15.
+//按钮一
+mixin buttonsA(a)
+    -a = a || {};
+    -a.value = a.value || "请设置按钮名称";
+    -a.class = a.class || "";
+    button.buttonsA.col-xs-10.col-xs-offset-1(class="#{a.class}") #{a.value}

@@ -1,0 +1,48 @@
+//
+   Created by 张云山 on 2017/2/14.
+//引入变量
+include vars
+block vars
+//导航模块
+include navs
+//按钮模块
+include buttons
+//页面架构
+mixin htmls(a)
+    -
+        a = a || {};
+        a.script = a.script || [];
+        a.link = a.link || [];
+        a.jquery = (a.jquery)?a.jquery:((a.jquery === false)? false : true) ;//默认启用jquery
+        a.publicCss = (a.publicCss)?a.publicCss:((a.publicCss === false)? false : true) ;//默认启用publicCss
+        a.title = a.title||"请设置您的文档标题！";
+        a.bodyClass = a.bodyClass||"";//body的class类
+    doctype html
+    html(lang="en")
+        head
+            meta(charset="utf-8")
+            meta( content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport")
+            title #{a.title}
+            if a.publicCss
+                link(rel="stylesheet" name = "publicCss",href="#{public_Url}css/public.css")
+            each v1 in a.link
+                link(
+                rel="stylesheet"
+                href="#{(v1.href)?v1.href:''}"
+                name = "#{(v1.name)?v1.name:''}"
+                )
+            block links
+            if a.jquery
+                script(name = "jquery",src="#{public_Url}js/jquery.js")
+            each v2 in a.script
+                script(
+                    src="#{(v2.src)?v2.src:''}"
+                    name = "#{(v2.name)?v2.name:''}"
+                )
+            block scripts
+        body(class="#{a.bodyClass}")
+            block bodys
+block htmls
+//导航
+block navs
+

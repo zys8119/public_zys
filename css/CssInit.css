@@ -1,0 +1,32 @@
+* {
+  font-family: "微软雅黑";
+}
+body,
+div,
+a,
+button,
+input,
+textarea,
+i,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+select,
+dl,
+dt,
+dd,
+img {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}

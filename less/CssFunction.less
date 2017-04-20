@@ -1,0 +1,490 @@
+//依赖s
+@import "vars";
+//依赖e
+
+//=========================================s
+//css公共方法==============================s
+
+//********基础封装**********///
+  .keyframes-Css(){}
+  .animation-Css(){}
+  .animation-name-Css(){}
+  .animation-duration-Css(){}
+  .animation-timing-function-Css(){}
+  .animation-delay-Css(){}
+  .animation-iteration-count-Css(){}
+  .animation-direction-Css(){}
+  .animation-play-state-Css(){}
+  .animation-fill-mode-Css(){}
+  .background-Css(@a:@col-fff){
+    background-color: @a;
+  }
+  .background-attachment-Css(@a:@inherit){
+    background-attachment:@a;
+  }
+  .background-color-Css(@a:@transparent){
+    background-color: @a;
+  }
+  .background-image-Css(@a:@inherit){
+    background-image:url(@a);
+  }
+  .background-position-Css(@a:@inherit){
+    background-position: @a;
+  }
+  .background-repeat-Css(@a:@no-repeat){
+    background-repeat: @a;
+  }
+  .background-clip-Css(@a:@border-box){
+    background-clip: @a;
+  }
+  .background-origin-Css(@a:@border-box){
+    background-origin: @a;
+  }
+  .background-size-Css(@a:@auto){
+    background-size: @a;
+  }
+  .border-Css(@a:@none){
+    border: @a;
+  }
+  .border-bottom-Css(@a:@none){
+    border-bottom: @a;
+  }
+  .border-bottom-color-Css(@a:@col-000){
+    border-bottom-color: @a;
+  }
+  .border-bottom-style-Css(@a:@solid){
+    border-bottom-style: @a;
+  }
+  .border-bottom-width-Css(@a:@zhi-1){
+    border-bottom-width: @a;
+  }
+  .border-color-Css(@a:@col-000){
+    border-color: @a;
+  }
+  .border-left-Css(@a:@none){
+    border-left: @a;
+  }
+  .border-left-color-Css(@a:@col-000){
+    border-left-color: @a;
+  }
+  .border-left-style-Css(@a:@solid){
+    border-left-style: @a;
+  }
+  .border-left-width-Css(@a:@zhi-1){
+    border-left-width: @a;
+  }
+  .border-right-Css(@a:@none){
+    border-right: @a;
+  }
+  .border-right-color-Css(@a:@col-000){
+    border-right-color: @a;
+  }
+  .border-right-style-Css(@a:@solid){
+    border-right-style: @a;
+  }
+  .border-right-width-Css(@a:@zhi-1){
+    border-right-width: @a;
+  }
+  .border-style-Css(@a:@solid){
+    border-style: @a;
+  }
+  .border-top-Css(@a:@none){
+    border-top: @a;
+  }
+  .border-top-color-Css(@a:@col-000){
+    border-top-color: @a;
+  }
+  .border-top-style-Css(@a:@solid){
+    border-top-style: @a;
+  }
+  .border-top-width-Css(@a:@zhi-1){
+    border-top-width: @a;
+  }
+  .border-width-Css(@a:@zhi-1){
+    border-width: @a;
+  }
+  .outline-Css(@a:@medium){
+    outline: @a;
+  }
+  .outline-color-Css(@a:@col-000){
+    outline-color: @a;
+  }
+  .outline-style-Css(@a:@inherit){
+    outline-style: @a;
+  }
+  .outline-width-Css(@a:@zhi-1){
+    outline-width: @a;
+  }
+  .border-bottom-left-radius-Css(@a:@zhi-0){
+    border-bottom-left-radius:@a;
+  }
+  .border-bottom-right-radius-Css(@a:@zhi-0){
+    border-bottom-right-radius: @a;
+  }
+  .border-image-Css(){}
+  .border-image-outset-Css(){}
+  .border-image-repeat-Css(){}
+  .border-image-slice-Css(){}
+  .border-image-source-Css(){}
+  .border-image-width-Css(){}
+  .border-radius-Css(@a:@inherit){
+    border-radius: @a;
+  }
+  .border-top-left-radius-Css(@a:@zhi-0){
+    border-top-left-radius: @a;
+  }
+  .border-top-right-radius-Css(@a:@zhi-0){
+    border-top-right-radius: @a;
+  }
+  .box-shadow-Css(@a:@none){
+    box-shadow: @a;
+  }
+  .overflow-x-Css(@a:@hidden){
+    overflow-y: @a;
+  }
+  .overflow-y-Css(@a:@hidden){
+    overflow-x:@a;
+  }
+  .opacity-Css(@a:@z_5){
+    opacity:@a;
+  }
+  .height-Css(@a:@auto){
+    height: @a;
+  }
+  .max-height-Css(@a:@auto){
+    max-height: @a;
+  }
+  .max-width-Css(@a:@auto){
+    max-width: @a;
+  }
+  .min-height-Css(@a:@auto){
+    min-height: @a;
+  }
+  .min-width-Css(@a:@auto){
+    min-width: @a;
+  }
+  .width-Css(@a:@auto){
+    width: @a;
+  }
+  .box-align-Css(){}
+  .box-direction-Css(){}
+  .box-flex-Css(){}
+  .box-flex-group-Css(){}
+  .box-lines-Css(){}
+  .box-ordinal-group-Css(){}
+  .box-orient-Css(){}
+  .box-pack-Css(){}
+  .font-Css(){}
+  .font-family-Css(@fontName:@zt-v){
+    font-family:@fontName;
+  }
+  .font-size-Css(@a:@zhi-12){
+    font-size: @a;
+  }
+  .font-size-adjust-Css(){}
+  .font-stretch-Css(){}
+  .font-style-Css(@a:@normal){
+    font-style: @a;
+  }
+  .font-variant-Css(){}
+  .font-weight-Css(@a:@bold){
+    font-weight: @a;
+  }
+  .content-Css(){}
+  .counter-increment-Css(){}
+  .counter-reset-Css(){}
+  .quotes-Css(){}
+  .grid-columns-Css(){}
+  .grid-rows-Css(){}
+  .target-Css(){}
+  .target-name-Css(){}
+  .target-new-Css(){}
+  .target-position-Css(){}
+  .list-style-Css(@a:@none){
+    list-style: @a;
+  }
+  .list-style-image-Css(){}
+  .list-style-position-Css(){}
+  .list-style-type-Css(){}
+  .margin-Css(@a:@zhi-0){
+    margin: @a;
+  }
+  .margin-bottom-Css(@a:@auto){
+    margin-bottom: @a;
+  }
+  .margin-left-Css(@a:@auto){
+    margin-left: @a;
+  }
+  .margin-right-Css(@a:@auto){
+    margin-right: @a;
+  }
+  .margin-top-Css(@a:@auto){
+    margin-top: @a;
+  }
+  .column-count-Css(){}
+  .column-fill-Css(){}
+  .column-gap-Css(){}
+  .column-rule-Css(){}
+  .column-rule-color-Css(){}
+  .column-rule-style-Css(){}
+  .column-rule-width-Css(){}
+  .column-span-Css(){}
+  .column-width-Css(){}
+  .columns-Css(){}
+  .padding-Css(@a:@zhi-0){
+    padding: @a;
+  }
+  .padding-bottom-Css(@a:@zhi-0){
+    padding-bottom: @a;
+  }
+  .padding-left-Css(@a:@zhi-0){
+    padding-left: @a;
+  }
+  .padding-right-Css(@a:@zhi-0){
+    padding-right: @a;
+  }
+  .padding-top-Css(@a:@zhi-0){
+    padding-top: @a;
+  }
+  .bottom-Css(@a:@zhi-0){
+    bottom: @a;
+  }
+  .clear-Css(){}
+  .clip-Css(){}
+  .cursor-Css(@a:@pointer){
+    cursor: @a;
+  }
+  .display-Css(@a:@block){
+    display: @a;
+  }
+  .float-Css(@a:@left){
+    float: @a;
+  }
+  .left-Css(@a:@zhi-0){
+    left: @a;
+  }
+  .overflow-Css(@a:@hidden){
+    overflow: @a;
+  }
+  .position-Css(@a:@absolute){
+    position: @a;
+  }
+  .right-Css(@a:@zhi-0){
+    right: @a;
+  }
+  .top-Css(@a:@zhi-0){
+    top:@a;
+  }
+  .vertical-align-Css(){}
+  .visibility-Css(){}
+  .z-index-Css(@a:@zhi-0){
+    z-index: @a;
+  }
+  .page-break-after-Css(){}
+  .page-break-before-Css(){}
+  .page-break-inside-Css(){}
+  .border-collapse-Css(){}
+  .border-spacing-Css(){}
+  .caption-side-Css(){}
+  .empty-cells-Css(){}
+  .table-layout-Css(){}
+  .color-Css(@a:@col-000){
+    color: @a;
+  }
+  .direction-Css(){}
+  .letter-spacing-Css(){}
+  .line-height-Css(@a:@normal){
+    line-height: @a;
+  }
+  .text-alignCss(@a:@center){
+    text-align: @a;
+  }
+  .text-decoration-Css(@a:@none){
+    text-decoration: @a;
+  }
+  .text-indent-Css(@a:@zhi-24){//文字缩进
+    text-indent:@a;
+  }
+  .text-transform-Css(){}
+  .unicode-bidi-Css(){}
+  .white-space-Css(@a:@nowrap){
+    white-space: @a;
+  }
+  .word-spacing-Css(){}
+  .hanging-punctuation-Css(){}
+  .punctuation-trim-Css(){}
+  .text-emphasis-Css(){}
+  .text-justify-Css(){}
+  .text-outline-Css(){}
+  .text-overflow-Css(@a:@ellipsis){
+    text-overflow: @a;
+  }
+  .text-shadow-Css(@a:@none){
+    text-shadow: @a;
+  }
+  .text-wrap-Css(){}
+  .word-break-Css(){}
+  .word-wrap-Css(){}
+  .transform-Css(){}
+  .transform-origin-Css(){}
+  .transform-style-Css(){}
+  .perspective-Css(){}
+  .perspective-origin-Css(){}
+  .backface-visibility-Css(){}
+  .transition-Css(){}
+  .transition-property-Css(){}
+  .transition-duration-Css(){}
+  .transition-timing-function-Css(){}
+  .transition-delay-Css(){}
+  .appearance-Css(){}
+  .box-sizing-Css(){}
+  .icon-Css(){}
+  .nav-down-Css(){}
+  .nav-index-Css(){}
+  .nav-left-Css(){}
+  .nav-right-Css(){}
+  .nav-up-Css(){}
+  .outline-offset-Css(){}
+  .resize-Css(){}
+
+//********自定义方法**********///
+    //基础扩展
+      .posCss(@type:@absolute,@left:@zhi-0,@top:@zhi-0,@bottom:@zhi-0,@right:@zhi-0,@zindex:@z-1){//定位
+        position: @type;
+        left: @left;
+        bottom: @bottom;
+        z-index: @zindex;
+      };
+      .baimgCss(@url:"",@z:@zhi-12,@p:@center){//背景图
+        background-image: url(@url);
+        background-position:@p;
+        background-repeat: @no-repeat;
+        background-size: @z;
+      }
+      .position-Css-obj(
+        @fixed1:@fixed,
+        @left:@zhi-0,
+        @top:@zhi-0,
+        @right:@inherit,
+        @bottom:@inherit,
+        @zindex:@z-1,
+        @width:@zi-100,
+        @height:@zi-100
+      ){
+        .if()when(@fixed1 = @relative){
+              .position-Css(@fixed1);
+        }
+        .if()
+        when(@fixed1 = @absolute)
+        or(@fixed1 = @fixed)
+        {
+              .position-Css(@fixed1);
+              .left-Css(@left);
+              .top-Css(@top);
+              .right-Css(@right);
+              .bottom-Css(@bottom);
+              .width-Css(@width);
+              .height-Css(@height);
+              .z-index-Css(@zindex);
+        }
+        .if();
+      }
+      .rgbaCss-ba(@r:@zhi-0,@g:@zhi-0,@b:@zhi-0,@a:@z_5){
+        background-color:rgba(@r,@g,@b,@a);
+      }
+      .rgbaCss-color(@r:@zhi-0,@g:@zhi-0,@b:@zhi-0,@a:@z_5){
+        color:rgba(@r,@g,@b,@a);
+      }
+      .background-image-Obj(@url,@cover:@cover,@center:@center){
+        .background-image-Css(@url);
+        .background-repeat-Css();
+        .background-position-Css(@center);
+        .background-size-Css(@cover);
+      }
+      .Square-Css(@index:@zhi-40,@r:@zhi-2,@ba-color:@transparent,@color:@col-000){
+        .width-Css(@index);
+        .height-Css(@index);
+        .background-Css(@ba-color);
+        .color-Css(@color);
+        .text-alignCss();
+        .line-height-Css(@index);
+        .border-radius-Css(@r);
+      }
+    //按钮==========================
+    .buttonsCss(
+      @buttonName:ButtonInit,
+      @color:@col-fff,
+      @background-color:@col-f3981e,
+      @line-height:@zhi-30,
+      @border-radius:@zhi-5,
+      @border:@zhi-0 @solid @transparent,
+      @active-background-color:@background-color / 0.9,
+      @text-alignCss:@center
+    ){
+      .@{buttonName}{
+        .color-Css(@color);
+        .background-color-Css(@background-color);
+        .line-height-Css(@line-height);
+        .border-radius-Css(@border-radius);
+        .border-Css(@border);
+        .text-alignCss(@text-alignCss);
+        .outline-Css();
+        &:active{
+          .background-color-Css(@active-background-color);
+        }
+      }
+    }
+    //导航===========================
+      //顶部导航
+        .navs_topCss(
+          @name:navs_top,
+          @color: @col-fff,
+          @line-height: @zhi-40,
+          @background-color:@transparent
+        ){
+          .@{name} {
+            .color-Css(@color);
+            .line-height-Css(@line-height);
+            .background-color-Css(@background-color);
+            .left {
+              .baimgCss(@p: @zhi-20);
+            }
+            .content {
+              .text-alignCss();
+            }
+            .right {
+              .baimgCss(@p: @zhi-20);
+            }
+          }
+        }
+      //底部导航
+        .navs_buttomCss(
+          @name:navs_buttom,
+          @background-color:@col-ededed
+        ){
+          .@{name}{
+            .background-color-Css(@background-color);
+            .text-alignCss();
+            .posCss();
+            .padding-Css(@zhi-5 @zhi-0);
+            i{
+              .baimgCss(@z: @zhi-16);
+            }
+            span{
+              .font-size-Css();
+              .color-Css(@col-000);
+            }
+          }
+        }
+    //文字排版===================================
+      //文字溢出
+      .text---Css(@name:text---,@a:@hidden,@b:@nowrap,@c:@ellipsis){
+        .@{name}{
+          .overflow-Css(@a);
+          .white-space-Css(@b);
+          .text-overflow-Css(@c);
+        }
+      }
+
+//css公共方法==============================e
+//=========================================e

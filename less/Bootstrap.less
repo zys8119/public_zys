@@ -1,0 +1,29 @@
+//依赖s
+@import "CssFunction";
+//依赖e
+
+//============================================s
+//响应式布局样式==============================s
+//响应式布局样式（参考Bootstrap）
+//.col-xs-12{
+//  .overflow-Css();
+//}
+.BootstrapInit(@index:12,@max:@index*4,@i:0)when(@i <= @max){
+  //@index:栅格化个数
+  .BootstrapTpee(@type,@i){//模块
+    @colData:unit(100/@index*@i,%);
+    .col-@{type}-@{i}{.float-Css();.position-Css(@relative);.min-height-Css(@zhi-1);.width-Css(@colData);}
+    .col-@{type}-offset-@{i}{.margin-left-Css(@colData)}
+    .col-@{type}-push-@{i}{.left-Css(@colData);}
+    .col-@{type}-pull-@{i}{.right-Css(@colData);}
+  }
+  .if()when(@i <= @index){.BootstrapTpee(@type:xs, @i);}//col-xs-[1-12]
+  .if()when(@i >= @index) and (@i <= (@index*2)){@media (min-width:unit(768,px)) {.BootstrapTpee(@type:sm, @i - @index);}}//col-sm-[1-12]
+  .if()when(@i >= (@index*2)) and (@i <= (@index*3)){@media (min-width:unit(992,px)) {.BootstrapTpee(@type:md, @i - @index*2);}}//col-md-[1-12]
+  .if()when(@i >= (@index*3)) and (@i <= (@index*4)){@media (min-width:unit(1200,px)) {.BootstrapTpee(@type:lg, @i - @index*3);}}//col-lg-[1-12]
+  .if();//执行判断
+  .BootstrapInit(@index,@max,@i+1);//递归
+}
+.BootstrapInit();
+//响应式布局样式==============================e
+//============================================e
