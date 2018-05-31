@@ -1,6 +1,6 @@
-.BootstrapInit(@index:12,@maxIndex:1,@max:10,@i:0,@type:w,@fn:{})when(@i <= @max){
+.newFunInit(@index:12,@maxIndex:1,@max:10,@i:0,@type:w,@fn:{})when(@i <= @max){
   //@index:栅格化个数
-  .BootstrapTpee(@type,@i,@maxIndex){//模块
+  .newFunTpee(@type,@i,@maxIndex){//模块
     @indexSum:@maxIndex*@i;
     @width:unit(@indexSum,px);
     .@{type}@{indexSum}{
@@ -9,11 +9,11 @@
       @fn();
     }
   }
-  .if()when(@i <= @index){.BootstrapTpee(@type, @i,@maxIndex);}
+  .if()when(@i <= @index){.newFunTpee(@type, @i,@maxIndex);}
   .if();//执行判断
-  .BootstrapInit(@maxIndex:@maxIndex,@index,@max,@i+1,@type:@type,@fn:@fn);//递归
+  .newFunInit(@maxIndex:@maxIndex,@index,@max,@i+1,@type:@type,@fn:@fn);//递归
 }
-.BootstrapInit(@type:_w,@index:100,@max: 100,@maxIndex: 5,@fn:{
+.newFunInit(@type:_w,@index:100,@max: 100,@maxIndex: 5,@fn:{
   background-color:#f00;
   height: @width;
 });
